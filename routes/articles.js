@@ -5,7 +5,7 @@ router.get('/new',(req,res)=>{
     res.render('articles/new',{article: new Article()})
 })
 
-router.get('/edit/:id',(req,res)=>{
+router.get('/edit/:id',async (req,res)=>{
     const article = await Article.findById(req.param.id)
     res.render('articles/edit',{article: article})
 })
@@ -30,13 +30,13 @@ router.delete('/:id', async(req,res)=>{
 })
 
 function saveArticleAndRedirect(path){
-    return (req,res)=>{
+    return async (req,res)=>{
         let article = new Article({
             title:req.body.title,
             description:req.body.description,
             markdown:req.body.markdown
         })
-    
+        console.log('article: '+ article)
         try{
             article = await article.save()
             res.redirect(`/articles/${article.slug}`)
