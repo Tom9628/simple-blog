@@ -58,6 +58,9 @@
    padding: 20px;
    margin-top: 20px;
 }
+.card .card-image{
+  width: 100%;
+}
 .comment-area{
 background-color: white;
 padding: 20px;
@@ -88,6 +91,9 @@ padding: 20px;
           <h2><%= article.title %></h2>
           <h5>Title description, <%= article.createdAt.toLocaleDateString() %></h5>
           <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+          <% if (article.image) { %>
+            <img class="card-image" width="500" src="/uploads/<%= article.image %>"><br/>
+          <% } %>
           <p><%= article.description %></p>
 
           <p><a href="/frontend/show/<%= article.slug  %>">read more</a></p>
