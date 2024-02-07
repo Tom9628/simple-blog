@@ -35,7 +35,11 @@ app.get('/frontend', async (req,res)=> {
         .sort({ createdAt: 'desc' })
         .limit(limit);
 
-    res.render('frontend/index',{articles:articles, page: 1});
+    const totalArticles = await Article.countDocuments();
+    
+    const totalPages = Math.ceil(totalArticles / limit);
+
+    res.render('frontend/index',{articles:articles , prevpage: parseInt(page) -1 , nextpage: parseInt(page) +1, totalPages:totalPages});
 })
 
 
@@ -49,7 +53,11 @@ app.get('/frontend/page/:page', async (req,res)=> {
         .skip(skip)
         .limit(limit);
 
-    res.render('frontend/index',{articles:articles, page: req.params.page });
+    const totalArticles = await Article.countDocuments();
+
+    const totalPages = Math.ceil(totalArticles / limit);
+
+    res.render('frontend/index',{articles:articles, prevpage: parseInt(req.params.page) -1 , nextpage: parseInt(req.params.page) +1, totalPages:totalPages });
 })
 
 app.use('/articles',articleRouter)
