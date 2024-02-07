@@ -26,6 +26,14 @@ const articleSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    visitedCount:{
+        type: String,
+        default: 0
+    },
+    image:{
+        type: String,
+        default: ''
+    },
     sanitizedHtml:{
         type:String,
         requried:true

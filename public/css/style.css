@@ -1,0 +1,340 @@
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+header{
+padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.top-menu{
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.top-menu .row-item{
+display: inline-flex;
+padding: 5px;
+vertical-align: middle;
+line-height: 16px;
+}
+.top-menu .row-stts{
+display: inline-flex;
+border: 1px solid #aab4b5;
+padding: 5px;
+background-color: #eff9fb;
+vertical-align: middle;
+line-height: 16px;
+font-size: inherit;
+position:relative;
+}
+.top-menu .row-stts svg{
+margin-right: 5px;
+fill: #2196F3;
+}
+.top-menu .row-item input{
+width: 90px;
+}
+.top-menu .row-item button{
+border: 1px solid #aab4b5;
+background-color: #eff9fb;
+line-height: 16px;
+font-size: inherit;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #fff;
+min-width: 160px;
+box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+z-index: 5;
+top: 26px;
+right: -1px;
+border: 1px solid #aab4b5;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+padding: 5px;
+display: block;
+text-align: left;
+text-decoration: none;
+line-height: 16px;
+vertical-align: middle;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+background-color: #555;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+.active-menus{
+        display:flex;
+        justify-content:space-between;
+        background-color:#CED3ED;
+        align-items: center;
+    }
+    .active-menus .defualtMenu{
+      display:flex; align-items:center; gap:10px;
+    }
+    .active-menus .defualtMenu label.special{
+      width: 30px;
+    }
+    .active-menus .defualtMenu label{
+      padding:3px 8px;
+      cursor: pointer;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 16px;
+    }
+    .active{
+        background-color:#01448A;color: #fff;padding:5px;
+    }
+
+
+.container {
+display: flex;
+height: calc(100vh - 24px - 54.5px);
+}
+
+.sidebar {
+width: 250px; /* Adjust the width as needed */
+height: calc(100vh - 24px - 54.5px);
+}
+.search-section{
+background-color: #BDD9EE;
+display:flex;
+align-items:center;
+gap:10px;
+padding: 10px;
+}
+.search-section button {
+border: 1px solid #aab4b5;
+background-color: #eff9fb;
+line-height: 16px;
+font-size: inherit;
+}
+.main-container {
+flex: 1; /* This will make the main container take the remaining space */
+}
+
+
+.container.font-s {
+  font-size: 12px;
+}
+.container.font-m {
+  font-size: 14px;
+}
+.container.font-l {
+  font-size: 16px;
+}
+.container.cadet-green .header-section {
+  background-color: #537275;
+  color: #fff;
+}
+.container.cadet-green .footer-section {
+  background-color: #e7f2f4;
+}
+.container.cadet-green .footer-section .button {
+  background-color: #0d6973;
+  color: #fff;
+}
+.container.glaucous-dark .header-section {
+  background-color: #316495;
+  color: #fff;
+}
+.container.glaucous-dark .footer-section {
+  background-color: #bdd9ee;
+}
+.container.glaucous-dark .footer-section .button {
+  background-color: #1f527d;
+  color: #fff;
+}
+.container.sephia .header-section {
+  background-color: #664227;
+  color: #fff;
+}
+.container.sephia .footer-section {
+  background-color: #d1b6a1;
+}
+.container.sephia .footer-section .button {
+  background-color: #b74100;
+  color: #fff;
+}
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.footer-section {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 100px;
+ /* Adjust column width as needed */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+}
+.footer-section .button {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #333;
+  border: none;
+  font-size: inherit;
+  margin-right: 5px;
+}
+.footer-section .row {
+  grid-area: auto;
+ /* Default to auto placement within the grid */
+}
+
+
+.section-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-column {
+  width: 48%;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 24px - 54.5px);
+}
+
+.sidebar {
+  width: 250px; /* Adjust the width as needed */
+  height: calc(100vh - 24px - 54.5px);
+}
+.search-section{
+  background-color: #BDD9EE;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding: 10px;
+}
+.search-section button {
+  border: 1px solid #aab4b5;
+  background-color: #eff9fb;
+  line-height: 16px;
+  font-size: inherit;
+}
+
+.list-section{
+  overflow-y: scroll;
+  background-color: #f1f4ff;
+  padding: 10px;
+  height: calc(100vh - 24px - 54.5px - 64.5px);
+}
+.list-section .parent{
+  list-style-type: disclosure-closed;
+  margin: 0px;
+  padding: 0px;
+}
+.list-section .parent li.open,
+.list-section .parent .child li.open{
+  list-style-type:disclosure-open;
+}
+.list-section .parent .child{
+  list-style-type: disclosure-closed;
+  margin: 0px;
+  padding: 0px 12px;
+  display: none;
+}
+.list-section .parent .child .child{
+  list-style-type: square;
+  display: none;
+}
+.list-section .parent li.open .show,
+.list-section .parent .child .show{
+  display: block;
+}
+
+
+
+
+.x-grid {
+  border-spacing: 0px;
+  width: 100%;
+}
+.x-grid tr th {
+  font-weight: 500;
+  border-right: 1px solid #fff;
+  padding: 2px;
+}
+.x-grid tr td {
+  padding: 2px;
+  border-bottom: 1px solid #ccc;
+}
+.x-grid tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.cadet-green tr th {
+  background-color: #d3dfe1;
+}
+.glaucous-dark tr th {
+  background-color: #b1d1ff;
+}
+.sephia tr th {
+  background-color: #e6af93;
+}
+
+
+
+
+
+
+
+.x-input {
+  flex: 1;
+  box-sizing: border-box;
+ /* Include padding and border in the width */
+  width: 100%;
+ /* Take remaining width */
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+ /* Material Design Blue */
+  outline: none;
+  transition: border-bottom-color 0.3s;
+  background-color: transparent;
+ /* Adjust the placeholder color if needed */
+}
+.x-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+.x-input:focus {
+  border-bottom-color: #2196f3;
+ /* Change the underline color on focus */
+}
+.x-input.font-s {
+  font-size: 12px;
+}
+.x-input.font-m {
+  font-size: 14px;
+}
+.x-input.font-l {
+  font-size: 16px;
+}

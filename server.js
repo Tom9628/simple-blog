@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost/blog',{
 })
 
 app.set('view engine','ejs')
+app.use(express.static('public'));
 
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
@@ -21,5 +22,35 @@ app.get('/',async (req,res) => {
         createdAt:'desc' })
     res.render('articles/index',{articles:articles})
 })
+
+
+const page = 1; // This is the page number you want to fetch
+const limit = 5; // Number of documents per page
+
+app.get('/frontend', async (req,res)=> {
+    // Calculate the number of documents to skip
+
+    // Query MongoDB to get the articles with pagination
+    const articles = await Article.find()
+        .sort({ createdAt: 'desc' })
+        .limit(limit);
+
+    res.render('frontend/index',{articles:articles, page: 1});
+})
+
+
+app.get('/frontend/page/:page', async (req,res)=> {
+    // Calculate the number of documents to skip
+    const skip = (req.params.page - 1) * limit;
+
+    // Query MongoDB to get the articles with pagination
+    const articles = await Article.find()
+        .sort({ createdAt: 'desc' })
+        .skip(skip)
+        .limit(limit);
+
+    res.render('frontend/index',{articles:articles, page: req.params.page });
+})
+
 app.use('/articles',articleRouter)
-app.listen(5000)
+app.listen(3000)
