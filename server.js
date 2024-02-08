@@ -59,6 +59,12 @@ app.get('/frontend/page/:page', async (req,res)=> {
 
     res.render('frontend/index',{articles:articles, prevpage: parseInt(req.params.page) -1 , nextpage: parseInt(req.params.page) +1, totalPages:totalPages });
 })
+app.get('/frontend/show/:slug', async (req,res)=> {
+
+    const article = await Article.findOne({ slug:req.params.slug})
+    if(article == null) res.redirect('/')
+    res.render('frontend/show',{article:article})
+})
 
 app.use('/articles',articleRouter)
 app.listen(3000)
